@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe.com</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <img src="./assets/tictactoe img.png" alt="img">
+        <ul>
+            <li><a href="index.html">TicTacToe</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="gameContainer">
+
+        <div class="parentOfWinImgContainer">
+            <div class="WinImgContainer">
+                <img src="./assets/my_New_image-removebg-preview.png" alt="">
+                <div><span class="winnerName">hanzala bawany</span> you win</div>
+            </div>
+
+            <img onclick="closeModal()" class="closeModal" src="./assets/close img.png" alt="">
+        </div>
+
+
+        <div class="gameIntroContainer">
+            <h1>Welcome To TicTacToe Game</h1>
+            <div>
+                <button class="reset">Reset</button>
+                <span class="turnChanger">Player  turns</span>
+
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div   class="b1 bt bl box">
+                <span class="box_text"></span>
+            </div>
+            <div  class="b2 box bt">
+                <span class="box_text"></span>
+            </div>
+            <div  class="b3 box bt br">
+                <span class="box_text"></span>
+            </div>
+            <div  class="b4 box bl">
+                <span class="box_text"></span>
+            </div>
+            <div  class="b5 box">
+                <span class="box_text"></span>
+            </div>
+            <div  class="b6 box br">
+                <span class="box_text"></span>
+            </div>
+            <div  class="b7 box bl bb">
+                <span class="box_text"></span>
+            </div>
+            <div  class="b8 box bb">
+                <span class="box_text"></span>
+            </div>
+            <div  class="b9 box br bb">
+                <span class="box_text"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

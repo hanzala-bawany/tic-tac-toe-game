@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Baloo 2", sans-serif;
+}
+
+/* section1 navbar */
+nav {
+    height: 7vh;
+    background-color: rgb(189, 13, 189);
+    padding: 0px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav img {
+    height: 80%;
+    width: 50px;
+    border: 1.5px solid;
+    border-radius: 50%;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav li a {
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
+}
+
+
+/* section 2   container */
+
+.gameContainer {
+    margin-top: 10vh;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 40px;
+    position: relative;
+}
+
+.parentOfWinImgContainer {
+    display: none;
+    position: absolute;
+}
+
+.dispbloayIB{
+    display: inline-block;
+}
+.WinImgContainer {
+    height: 30vh;
+    width: 40vw;
+    background-color: rgb(249, 222, 255);
+    border: 2px solid;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.WinImgContainer img {
+    width: 80px;
+}
+
+.WinImgContainer div {
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+@media only screen and (max-width:500px) and (max-height:1000px){
+    .WinImgContainer {
+        height: 20vh;
+        width: 75vw;
+    }
+
+
+.WinImgContainer img {
+    width: 80px;
+}
+
+.WinImgContainer div {
+    font-size: 22px;
+}
+}
+
+@media only screen and (max-width:500px) and (max-height:800px){
+
+.WinImgContainer img {
+    width: 60px;
+}
+.WinImgContainer div {
+    font-size: 21px;
+}
+}
+
+.closeModal {
+    width: 16px;
+    height: 15px;
+    position: absolute;
+    top: 6px;
+    right: 8px;
+}
+
+.closeModal:hover {
+    background-color: red;
+}
+.openModal{
+    display: inline-block;
+}
+
+
+
+
+.gameIntroContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 6px;
+}
+
+.gameIntroContainer h1 {
+    font-size: 35px;
+    text-align: center;
+}
+
+.gameIntroContainer button {
+    padding: 1.5px 4px;
+    border: 2px solid;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.gameIntroContainer button:hover {
+    background-color: rgb(249, 222, 255);
+}
+
+.gameIntroContainer span {
+    padding: 1.5px 4px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 10px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.gameIntroContainer .turnChanger{
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 16vh);
+    grid-template-columns: repeat(3, 18vh);
+}
+
+@media only screen and (max-width:500px) and (max-height:1000px){
+    .container {
+        display: grid;
+        grid-template-rows: repeat(3, 12vh);
+        grid-template-columns: repeat(3, 12vh);
+    }
+}
+
+.container .box {
+    border: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .box span {
+    font-size: 12vh;
+}
+
+.container .box:hover {
+    background-color: rgb(249, 222, 255);
+}
+
+.container .bt {
+    border-top: none;
+}
+
+.container .bb {
+    border-bottom: none;
+}
+
+.container .br {
+    border-right: none;
+}
+
+.container .bl {
+    border-left: none;
+}
