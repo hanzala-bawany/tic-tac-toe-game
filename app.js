@@ -3,11 +3,11 @@ let player2Name = prompt("Player 2 Give Name");
 let sign = 'x'
 let value;
 let wining = false;
+let a = new Audio("./assets/mp3 1.mp3")
+let winAudio = new Audio("./assets/mp3 win.mp3")
 
 let playerTurnsName = document.body.querySelector(".turnChanger")
 playerTurnsName.innerHTML = `${player1Name} your turn`
-let a = new Audio("./assets/mp3 1.mp3")
-let winAudio = new Audio("./assets/mp3 win.mp3")
 
 
 
@@ -24,7 +24,27 @@ reset.addEventListener("click",function(){
    player2Name = prompt("Player 2 Give Name");
    playerTurnsName.innerHTML = `${player1Name} your turn`
 
+   sign = 'x'
+   wining = false;
 })
+
+
+// close modal
+function closeModal(){
+    document.body.querySelector(".parentOfWinImgContainer").classList.toggle("openModal")
+    
+        let boxText = document.body.querySelectorAll(".box_text")
+        boxText.forEach(function(items){
+            items.innerHTML = ""
+        })
+     
+        player1Name = prompt("Player 1 Give Name");
+        player2Name = prompt("Player 2 Give Name");
+        playerTurnsName.innerHTML = `${player1Name} your turn`     
+
+        sign = 'x'
+        wining = false;
+}
 
 
 //  for changing turn of players
@@ -84,22 +104,6 @@ console.log("hanzala bawany win");
 }
 
 
-// close modal
-function closeModal(){
-    document.body.querySelector(".parentOfWinImgContainer").classList.toggle("openModal")
-    
-        let boxText = document.body.querySelectorAll(".box_text")
-        boxText.forEach(function(items){
-            items.innerHTML = ""
-        })
-     
-        player1Name = prompt("Player 1 Give Name");
-        player2Name = prompt("Player 2 Give Name");
-        playerTurnsName.innerHTML = `${player1Name} your turn`
-     
-     }
-
-
 // for apply sign of players
 document.body.querySelectorAll(".box").forEach(function(items){
 
@@ -107,7 +111,7 @@ document.body.querySelectorAll(".box").forEach(function(items){
         items.querySelector(".box_text").innerHTML =  playerTurn();
         checkWining();
         if(!wining){
-        a.play() 
+           a.play() 
         // a.pause() 
         }
     })
