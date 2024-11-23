@@ -2,9 +2,14 @@ let player1Name = prompt("Player 1 Give Name");
 let player2Name = prompt("Player 2 Give Name");
 let sign = 'x'
 let value;
+let wining = false;
 
 let playerTurnsName = document.body.querySelector(".turnChanger")
 playerTurnsName.innerHTML = `${player1Name} your turn`
+let a = new Audio("./assets/mp3 1.mp3")
+let winAudio = new Audio("./assets/mp3 win.mp3")
+
+
 
 
 // reset
@@ -14,6 +19,7 @@ reset.addEventListener("click",function(){
    boxText.forEach(function(items){
        items.innerHTML = ""
    })
+
    player1Name = prompt("Player 1 Give Name");
    player2Name = prompt("Player 2 Give Name");
    playerTurnsName.innerHTML = `${player1Name} your turn`
@@ -60,6 +66,7 @@ winNum.forEach(function(items){
     let value2 = boxText[items[2]].innerHTML;
 
 if( value0 === value1 && value1 === value2 && value0 !== ""){
+    wining = true;
     if(value0 == "x"){
 document.body.querySelector(".winnerName").innerHTML = player1Name 
 console.log("hanzala bawany win");
@@ -68,24 +75,43 @@ console.log("hanzala bawany win");
         document.body.querySelector(".winnerName").innerHTML = player2Name
         console.log("ali win"); 
      }
+    winAudio.play()
     document.body.querySelector(".parentOfWinImgContainer").classList.toggle("openModal")
+    return;
 }
 })
 
 }
 
+
 // close modal
 function closeModal(){
     document.body.querySelector(".parentOfWinImgContainer").classList.toggle("openModal")
-}
+    
+        let boxText = document.body.querySelectorAll(".box_text")
+        boxText.forEach(function(items){
+            items.innerHTML = ""
+        })
+     
+        player1Name = prompt("Player 1 Give Name");
+        player2Name = prompt("Player 2 Give Name");
+        playerTurnsName.innerHTML = `${player1Name} your turn`
+     
+     }
 
 
 // for apply sign of players
 document.body.querySelectorAll(".box").forEach(function(items){
+
     items.addEventListener("click",function(){
         items.querySelector(".box_text").innerHTML =  playerTurn();
         checkWining();
+        if(!wining){
+        a.play() 
+        // a.pause() 
+        }
     })
+
 })
 
 
